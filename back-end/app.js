@@ -78,5 +78,19 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+// a route to handle About us page
+app.get('/about-us',  (req, res) => {
+  const aboutMeData = {
+    name: "Petra Ivanovic",
+    description: "Hi! My name is Petra and I am currenlty a Senior at NYU majoring in Computer and Data Science and minoring in Business Studies." +
+    + "I am originally from Zagreb, Croatia and have moved to New York about 2 years ago after spending my Freshman year at NYU Florence"+
+    "In my free time I love spending time with my friends, travelling, trying out different foods and reading."+
+    "\nLooking forward to meeting my classmates this semester and creating a good and useful project!",
+    imageUrl : "https://drive.google.com/uc?export=download&id=15auY3_0YKv48MPuxdkJqZHn7ce9TMcCM"
+  };
+  res.json(aboutMeData); //send JSON data 
+});
+
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
